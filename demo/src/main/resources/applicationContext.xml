@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Engine bean -->
+    <bean id="engine" class="com.example.demo.Engine">
+        <constructor-arg value="V8"/>
+    </bean>
+
+    <!-- Define the Car bean and inject the Engine dependency -->
+    <bean id="car" class="com.example.demo.Car">
+        <constructor-arg ref="engine"/>
+    </bean>
+
+</beans>
